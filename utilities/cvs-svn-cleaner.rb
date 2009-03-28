@@ -33,7 +33,7 @@ def processDir(dir)
 end
 
 #this is the dir to clean
-dir_to_clean = '/Users/Tony/work/alrd/idexx-web-libraries'
+dir_to_clean = '/Users/Tony/dev/rails/homestore'
 
 puts "Working directory: #{dir_to_clean}"
 processDir(dir_to_clean)
