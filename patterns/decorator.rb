@@ -60,37 +60,29 @@ wp.list_clothing
 wp.say_something_clever
 wp.make_the_most_of_it
 
-# now an example of Decorator using more ruby idioms
-require 'forwardable'
 
-class RubyHatDecorator < PersonDecorator
-  extend Forwardable
-  
-  def_delegators :@person, :say_something_clever, :make_the_most_of_it
-  
+
+# now an example of Decorator using more ruby idioms
+
+module RubyHatDecorator  
   def list_clothing
-    @person.list_clothing
+    super
     puts " and wearing bell bottoms"
   end
 end
 
-class RubyCleverDecorator < PersonDecorator
-  extend Forwardable
-
-  def_delegators :@person, :list_clothing, :make_the_most_of_it
-  
+module RubyCleverDecorator
   def say_something_clever
-    @person.say_something_clever
+    super
     puts " Ruby is as ruby does."
   end
 end
 
-
 puts ""
 puts "but Ruby idioms or always more concise."
-rhd = RubyHatDecorator.new(wp)
-rcd = RubyCleverDecorator.new(rhd)
+wp.extend(RubyHatDecorator)
+person.extend(RubyCleverDecorator) #insert the decorator module anywhere you want in the chain
 
-rcd.list_clothing
-rcd.say_something_clever
-rcd.make_the_most_of_it
+wp.list_clothing
+wp.say_something_clever
+wp.make_the_most_of_it
