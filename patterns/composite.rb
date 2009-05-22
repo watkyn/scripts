@@ -1,7 +1,6 @@
 # Composite Design pattern
 
 module Menu
-  
   def initialize(display_name)
     @display_name = display_name
   end
@@ -9,7 +8,6 @@ module Menu
   def display
     puts @display_name
   end
-  
 end
 
 class ParentMenu
@@ -22,7 +20,7 @@ class ParentMenu
     @sub_menus = []
   end  
   
-  def add_sub_menu(sub_menu)
+  def <<(sub_menu)
     @sub_menus << sub_menu
     return sub_menu
   end
@@ -42,12 +40,12 @@ end
 
 # construct a tree of menus
 root_menu = ParentMenu.new('File')
-root_menu.add_sub_menu(MenuItem.new('New'))
-recent = root_menu.add_sub_menu(ParentMenu.new('Recent'))
-recent.add_sub_menu(MenuItem.new('    Budget.rb'))
-recent.add_sub_menu(MenuItem.new('    Passwords.txt'))
-recent.add_sub_menu(MenuItem.new('    GroceryList.txt'))
-root_menu.add_sub_menu(MenuItem.new('Exit'))
+root_menu << MenuItem.new('New')
+recent = root_menu << ParentMenu.new('Recent')
+recent << MenuItem.new('    Budget.rb')
+recent<< MenuItem.new('    Passwords.txt')
+recent << MenuItem.new('    GroceryList.txt')
+root_menu << MenuItem.new('Exit')
 
 # display the root menu
 root_menu.display
