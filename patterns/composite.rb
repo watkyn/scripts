@@ -1,12 +1,20 @@
 # Composite Design pattern
 
 module Menu
+  
+  attr_accessor :display_name, :parent
+  
   def initialize(display_name)
     @display_name = display_name
+    @parent = nil
+  end
+  
+  def parent
+    @parent ? @parent.display_name : "none"
   end
   
   def display
-    puts @display_name
+    puts "#{@display_name} (Parent: #{parent})"
   end
 end
 
@@ -22,6 +30,7 @@ class ParentMenu
   
   def <<(sub_menu)
     @sub_menus << sub_menu
+    sub_menu.parent = self
     return sub_menu
   end
   
