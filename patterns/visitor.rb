@@ -3,10 +3,16 @@
 # The class hierachy that needs additional functionality needs to have an Accept method
 # that takes a pre-defined interface.  This is the main problem, the designer has to build Visitor in up front for it to work
 # with languages like Java.
+
+
+# pretending to be a java interface
 module TreeVisitor  
-  def visit(tree)
-    # do nothing since this is just the java interface that would be
-  end  
+  def visitOak(oak)
+  end
+  def visitAsh(ash)
+  end
+  def visitSugarMaple(maple)
+  end
 end
 
 # have you ever had pure maple sap?
@@ -39,7 +45,7 @@ class SquirrelVisitor
   end
 end
 
-# storing nuts for the winter
+# eating bugs with a stick
 class CrowVisitor
   include TreeVisitor
   
