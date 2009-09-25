@@ -42,14 +42,25 @@ class LabResultAdapter
   end
 end
 
+#legacy code that processes LabOrder objects that needs to also process LabResult objects now
+class LabProcessor
+  def process(lab_order)
+    @speedy = lab_order.speed_bar_value
+    #send it to the speedy deliver ...
+    if lab_order.abnormal_result? 
+      #send some more samples to the lab
+    end
+  end
+end
+
 
 #Now assume we are in java land again and I have a LabOrderInterface that the adapter and the laborder implement, but not the LabResult
-lo = LabOrder.new
-adapter = LabResultAdapter.new(LabResult.new)
-
-lo.speed_bar_value
-adapter.speed_bar_value
-
-lo.abnormal_result?
-adapter.abnormal_result?
+lab = LabProcessor.new
+lab.process(LabOrder.new)
+lab.process(LabResultAdapter.new(LabResult.new))
+begin
+  lab.process(LabResult.new)
+rescue
+  puts "see, this just is not adapted for lab processing"
+end
 
