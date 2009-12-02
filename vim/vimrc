@@ -1,0 +1,23 @@
+set tabstop=4
+set smarttab
+set shiftwidth=4
+set autoindent
+set expandtab
+set backspace=start,indent
+set nocompatible
+
+map Q :q!
+map <F1> :bn<CR>
+map <C-X> :FufFile<CR>
+map <C-B> :FufBuffer<CR>
+map <C-A> :w<CR>
+imap <C-A> <ESC>:w<CR>
+
+autocmd FileType make set noexpandtab
+autocmd FileType python set noexpandtab
+
+set hlsearch
+syntax on
+
+:colorscheme darkblue 
+:behave xterm
