@@ -1,0 +1,60 @@
+Linux And Ruby Notes
+
+sudo update-alternatives --config java (this is how to choose which one of something that I want to use)
+ifconfig - display ip information
+iptables for allowing or blocking specific ports
+
+packages
+sudo apt-get intsall sun-java5-jdk (or sun-java6-jdk)
+
+Ruby gems
+gem update --system (to upgrade the actual ruby gems version)
+
+copy file from remote machine using scp
+scp watkyn@watkyn.com:db_backup/homestore.sql homestore.sql
+
+use & at the end of the statement to make it run in a separate process
+
+find a file by name
+find /dir/ -iname *.pdf
+
+SCP commands
+scp -r dvader@deathstar.com:somedir somedir
+scp -r /somedir dvader@deathstar.com:somedir
+
+
+Safari Bookbag keeps the pdfs in this directory
+/private/var/mobile/Applications/DEC40D3E-FDB2-4C4F-B714-7EC39A4757D6/Documents
+
+GDB notes (mac osx debugger)
+GDB tips for the command line
+po - print object ( calls description )
+p - print (tell ref)
+p *self (more details)
+po <address of object>
+c - continue
+n - next line (step over)
+s - step into
+fin - return back up stack
+bt - backtrace
+up - up stack
+down - down stack
+
+
+
+installing app on jail broken iphone app
+scp -r ~/Desktop/yourApp.app root@your.device.ip:/Applications/
+chmod 755 in the new app directory
+then use boss prefs to respring the board and its done
+
+
+grep -di "alrd_download" <dir>
+
+looking for a process:
+ps -ef | grep -i bossA
+
+git commands
+remove a tag from remote repo: git push origin :sometag 
+
+
+
