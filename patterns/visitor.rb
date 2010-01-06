@@ -7,11 +7,7 @@
 
 # pretending to be a java interface
 module TreeVisitor  
-  def visitOak(oak)
-  end
-  def visitAsh(ash)
-  end
-  def visitSugarMaple(maple)
+  def visit(tree)
   end
 end
 
@@ -19,14 +15,14 @@ end
 class SyrupVisitor
   include TreeVisitor
   
-  def visitOak(oak)
-    puts "#{oak.gatherAcorns} is stupid!"
-  end
-  def visitAsh(ash)
-    puts "#{ash.eatAshBoringBeetle} is gross!"
-  end
-  def visitSugarMaple(maple)
-    puts "#{maple.drinkingSyrup} is better than any energy drink I have ever had!"
+  def visit(tree)
+    if tree.is_a? Oak
+      puts "#{tree.gatherAcorns} is stupid!"
+    elsif tree.is_a? Ash
+      puts "#{tree.eatAshBoringBeetle} is gross!"
+    elsif tree.is_a? SugarMaple
+      puts "#{tree.drinkingSyrup} is better than any energy drink I have ever had!"
+    end
   end
 end
 
@@ -34,14 +30,14 @@ end
 class SquirrelVisitor
   include TreeVisitor
   
-  def visitOak(oak)
-    puts "#{oak.gatherAcorns} is what I do to survive!"
-  end
-  def visitAsh(ash)
-    puts "#{ash.eatAshBoringBeetle} can be OK, if you are starving to death!"
-  end
-  def visitSugarMaple(maple)
-    puts "#{maple.drinkingSyrup} is impossible for me most of the time!"
+  def visit(tree)
+    if tree.is_a? Oak
+      puts "#{tree.gatherAcorns} is what I do to survive!"
+    elsif tree.is_a? Ash
+      puts "#{tree.eatAshBoringBeetle} can be OK, if you are starving to death!"
+    elsif tree.is_a? SugarMaple
+      puts "#{tree.drinkingSyrup} is impossible for me most of the time!"
+    end
   end
 end
 
@@ -49,14 +45,14 @@ end
 class CrowVisitor
   include TreeVisitor
   
-  def visitOak(oak)
-    puts "#{oak.gatherAcorns} is pointless!"
-  end
-  def visitAsh(ash)
-    puts "#{ash.eatAshBoringBeetle} makes you grow black hair on your chest!"
-  end
-  def visitSugarMaple(maple)
-    puts "#{maple.drinkingSyrup} does not do anything for me unless it is fermented!"
+  def visit(tree)
+    if tree.is_a? Oak
+      puts "#{tree.gatherAcorns} is pointless!"
+    elsif tree.is_a? Ash
+      puts "#{tree.eatAshBoringBeetle} makes you grow black hair on your chest!"
+    elsif tree.is_a? SugarMaple
+      puts "#{tree.drinkingSyrup} does not do anything for me unless it is fermented!"
+    end
   end
 end
 
@@ -65,7 +61,7 @@ end
 # how visitor is used to visit a heterogeneous hierarchy (in java for instance)
 class Oak
   def accept(visitor)
-    visitor.visitOak(self)
+    visitor.visit(self)
   end
   def gatherAcorns     
     puts 'gathering acorns'
@@ -74,7 +70,7 @@ end
 
 class Ash
   def accept(visitor)
-    visitor.visitAsh(self)
+    visitor.visit(self)
   end
   def eatAshBoringBeetle
     puts "eating ash boring beetles"
@@ -83,7 +79,7 @@ end
 
 class SugarMaple
   def accept(visitor)
-    visitor.visitSugarMaple(self)
+    visitor.visit(self)
   end
   def drinkingSyrup
     puts "drinking pure maple sap"
