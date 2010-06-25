@@ -1,12 +1,15 @@
-(println (.toUpperCase "hello"))
-(println (+ 1 2 3))
+(defn puts [message] (println message))
+
+(puts (.toUpperCase "hello"))
+(puts (+ 1 2 3))
 
 
-(defn square [x] (println(* x x)))
+(defn square [x] (* x x))
 
 (defn sum-of-squares [x, y] 
-  (println(+ (square x) (square y) )))
+  (+ (square x) (square y)))
 
-(square 21)
-(sum-of-squares 2 3)
+(puts (square 89))
+(puts (sum-of-squares 2 3))
 
+(puts "what is up")
