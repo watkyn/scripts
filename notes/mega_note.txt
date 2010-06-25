@@ -42,7 +42,7 @@ down - down stack
 
 
 
-installing app on jail broken iphone app
+installing app on jail broken iphone
 scp -r ~/Desktop/yourApp.app root@your.device.ip:/Applications/
 chmod 755 in the new app directory
 then use boss prefs to respring the board and its done
@@ -55,6 +55,8 @@ ps -ef | grep -i bossA
 
 git commands
 remove a tag from remote repo: git push origin :sometag 
+
+merge with no commits: git merge branch --no-commit
 
 
 
