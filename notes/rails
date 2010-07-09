@@ -1,0 +1,17 @@
+include ActionController::UrlWriter
+default_url_options[:host] = 'whatever'
+
+#debug a rake task
+rdebug -n /opt/local/bin/rake db:migrate
+
+3.4 Getting help (‘help’)        How to ask for help (help)
+3.5 Controlling the debugger (‘quit’, ‘restart’, ‘interrupt’, ‘source’)     Controlling the debugger (quit, restart, interrupt)
+3.6 Executing expressions on stop (‘display’, ‘undisplay’)      Executing expressions on stop (display, undisplay)
+3.7 Evaluating and Printing Expressions (‘p’, ‘pp’, ‘putl’, ‘ps’, ‘irb’)        Evaluating and Printing Expressions (p, pp, ps, pp, irb)
+3.8 Printing Variables (‘var’, ‘method’)        Printing Variables (var)
+3.9 Examining Program Source Files (‘list’)     Examining Program Source Files (list)
+3.10 Editing Source files (‘edit’)      Editing source files (edit)
+3.11 Examining the Stack Frame (‘where’, ‘up’, ‘down’, ‘frame’)     Examining the stack frame (where, up, down, frame)
+3.12 Stopping and Resuming Execution        Stopping and continuing (break, watch, step, cont...)
+3.13 ruby-debug settings (‘set args’, ‘set autoeval’..)     rdebug-settings (set args, set autoeval, ...)
+3.14 Program Information (‘info’)

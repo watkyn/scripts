@@ -1,3 +1,6 @@
+(ns watkyn
+  (:require clojure.contrib.test-is))
+
 (defn puts [message] (println message))
 
 (puts (.toUpperCase "hello"))
@@ -12,4 +15,14 @@
 (puts (square 89))
 (puts (sum-of-squares 2 3))
 
-(puts "what is up")
+(defn abs [x]
+  (cond 
+    (> x 0) x
+    (< x 0) (- x)))
+
+(puts (abs -5))        
+(puts (abs 0))        
+
+
+
+
