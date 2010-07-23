@@ -1,5 +1,3 @@
-#proof positive that class methods are inherited and can be overridden.  Take that Java!
-
 class Milo
 
   def self.hi
