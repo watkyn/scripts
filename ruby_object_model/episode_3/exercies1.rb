@@ -1,3 +1,14 @@
+
+# Dave's way
+# def count_with_increment(start, inc)
+#   start -= inc
+#   lambda do
+#     start += inc
+#   end
+# end
+
+
+# what i came up with before looking
 def count_with_increment(start, inc)
   lambda do
     tmp = start
