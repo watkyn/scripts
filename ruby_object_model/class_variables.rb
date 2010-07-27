@@ -48,14 +48,6 @@ class Bill < Triangle
   @stuff = 5
 end
 
-
-# puts Polygon.stuff
-# puts Triangle.stuff
-# puts Bill.stuff
-# 
-# puts Bill.class_variables
-# puts Polygon.instance_variables
-
 Triangle.do(:tony, :mindy, { :anth => 3, :joey => 4 })
 
 t = Triangle.new
