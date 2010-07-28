@@ -1,14 +1,10 @@
 class Example
-
-  puts "before #{self}"
-
   def one
     puts "one #{self}"
     def two
       puts "two #{self}"
     end
-  end
-  
+  end  
 end
 
 e = Example.new
