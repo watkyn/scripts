@@ -1,0 +1,22 @@
+<leader> is \ on my system
+
+<leader>d nerd-tree
+<leader>t goto file (mvim only)
+<leader>p peep open (mvim only - not sure this is what i want yet)
+
+change from nerd-tree to editor and back again = ctrl w w
+
+:bn - switches to the next buffer
+:buffers - show all the open buffers
+
+A - jump to end of line in insert mode
+gg - go to first line
+G - go to last line
+0 - go to beginning of line
+$ - go to end of line
+
+<C-l> hashrocket ( => )
+
+command-n to got to specific tabs
+<leader>n next tab
+<leader>b back tab
