@@ -23,3 +23,29 @@ syntax on
 
 :colorscheme desert 
 :behave xterm
+
+nmap <leader>d :NERDTreeToggle<CR>
+nmap <silent> <F7> :NERDTreeToggle<CR>
+
+" Make it easy to update/reload .vimrc
+nmap <leader>s :source ~/.vimrc<CR>
+
+" For Haml
+au! BufRead,BufNewFile *.haml setfiletype haml
+
+" bind control-l to hashrocket
+imap <C-l> <Space>=><Space>"
+
+" open tabs with command-number
+map <D-1> :tabn 1<CR>
+map <D-2> :tabn 2<CR>
+map <D-3> :tabn 3<CR>
+map <D-4> :tabn 4<CR>
+map <D-5> :tabn 5<CR>
+map <D-6> :tabn 6<CR>
+map <D-7> :tabn 7<CR>
+map <D-8> :tabn 8<CR>
+map <D-9> :tabn 9<CR>
+
+nmap <leader>n :tabnext<CR>
+nmap <leader>b :tabprev<CR>
