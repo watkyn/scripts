@@ -1,4 +1,4 @@
-#parrallel
+#parrallel assignment
 
 x, y, z = 1, 2, 3
 puts x, y, z
