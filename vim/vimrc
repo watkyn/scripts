@@ -14,9 +14,6 @@ map <F1> :bn<CR>
 map <C-A> :w<CR>
 imap <C-A> <ESC>:w<CR>
 
-autocmd FileType make set noexpandtab
-autocmd FileType python set noexpandtab
-
 syntax on
 
 :colorscheme desert 
@@ -47,3 +44,13 @@ map <D-9> :tabn 9<CR>
 
 nmap <leader>n :tabnext<CR>
 nmap <leader>b :tabprev<CR>
+nmap <leader>r :!!<CR>
+
+" for the command t plugin
+set wildignore+=.git,*.class,**/classes/**
+
+autocmd FileType make set noexpandtab
+autocmd FileType python set noexpandtab
+autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
+autocmd Filetype haml setlocal ts=2 sts=2 sw=2
+
