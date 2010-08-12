@@ -47,7 +47,8 @@ nmap <leader>b :tabprev<CR>
 nmap <leader>r :!!<CR>
 
 " for the command t plugin
-set wildignore+=.git,*.class,**/classes/**
+set wildignore+=.git,*.class,**/classes/**,**/CVS/**
+let NERDTreeIgnore=['\~$', 'CVS']
 
 autocmd FileType make set noexpandtab
 autocmd FileType python set noexpandtab
