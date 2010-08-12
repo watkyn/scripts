@@ -11,6 +11,6 @@ File.delete(__FILE__)
 puts "ending the program"
 
 open(__FILE__, "w") do |f|
-  f.out "puts 'this was pretty cool'"
+  f.print "puts 'this was pretty cool'"
 end
 
