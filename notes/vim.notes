@@ -8,6 +8,7 @@ change from nerd-tree to editor and back again = ctrl w w
 
 :bn - switches to the next buffer
 :buffers - show all the open buffers
+:b # - goes to that buffer
 
 A - jump to end of line in insert mode
 gg - go to first line
@@ -20,3 +21,8 @@ $ - go to end of line
 command-n to got to specific tabs
 <leader>n next tab
 <leader>b back tab
+
+ci ' - replaces text between single quote
+ci " - replaces text between double quote
+
+"a - changes to use the copy paste buffer designated by a
