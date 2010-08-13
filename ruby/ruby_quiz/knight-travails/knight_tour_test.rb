@@ -21,28 +21,38 @@
 require 'test/unit'
 require 'knight_tour'
 
-class KnightTest < Test::Unit::TestCase
+class KnightTourTest < Test::Unit::TestCase
 
   def test_only_a_h_and_1_8_combos_are_accepted
-    assert_raise { tour(a0, a0) }
-    #assert_raise { tour(a9, a9) }
-    #assert_raise { tour("`1", "`2") }
-    #assert_raise { tour(i1, i3) }
-    #assert_raise { tour(j1, j1) }
-    #assert_raise { tour(k1, k1) }
+    assert_raise(RuntimeError) { tour(a0, a0) }
+    assert_raise(RuntimeError) { tour(a9, a9) }
+    assert_raise(RuntimeError) { tour("`1", "`2") }
+    assert_raise(RuntimeError) { tour(i1, i3) }
+    assert_raise(RuntimeError) { tour(j1, j1) }
+    assert_raise(RuntimeError) { tour(k1, k1) }
     # TODO make sure we fuzz more bad data possibilities but do so smarter than this
   end
 
   def test_simple_one_moves
     assert_equal [c3], tour(b1, c3)
     assert_equal [a3], tour(b1, a3)
-    assert_equal [d3], tour(b1, d2)
+    assert_equal [d2], tour(b1, d2)
+  end
+
+  def test_nil_return_values_simple
+    assert_nil tour(b1, a3, a3)
+    assert_nil tour(b1, d2, d2)
+  end
+
+  def test_a_bunch_of_normal_two_param_calls
+    assert_equal [c7, b5, d6, b7], tour(a8, b7)
+    assert_equal [c3, d5, b4, d3], tour(b1, d3)
   end
   
-  # def test_a_bunch_of_normal_two_param_calls
-  #   assert_equal [c7, b5, d6, b7], tour(a8, b7)
-  # end
-  
+  def test_some_with_exluded_squares
+    #assert_equal [e6, g5, h3], tour(d4, h3, g1, f2, f4)
+  end
+
   def method_missing(meth, *args, &blk)
     return meth.to_s if meth.to_s.length == 2
     super    
