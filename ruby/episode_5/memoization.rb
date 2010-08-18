@@ -3,18 +3,13 @@ require 'memoizer'
 class Discounter
   extend Memoizer
 
-  memoize :discount_calc
 
   def initialize
     @cached_values = {}
   end
 
   def discount(*skus)
-    if respond_to?(:discount_calc)
-      puts "yes"
-    else 
-      tempy
-    end
+    discount_calc(skus)
   end
 
   def discount_calc(skus)
@@ -22,6 +17,8 @@ class Discounter
     puts "Expensive calculations for #{sum}"
     return sum
   end
+
+  memoize :discount_calc
 end
 
 
