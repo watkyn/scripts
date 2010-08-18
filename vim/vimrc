@@ -29,7 +29,7 @@ nmap <leader>s :source ~/.vimrc<CR>
 au! BufRead,BufNewFile *.haml setfiletype haml
 
 " bind control-l to hashrocket
-imap <C-l> <Space>=><Space>"
+imap <C-l> <Space>=><Space>
 
 " open tabs with command-number
 map <D-1> :tabn 1<CR>
@@ -55,3 +55,10 @@ autocmd FileType python set noexpandtab
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 autocmd Filetype haml setlocal ts=2 sts=2 sw=2
 
+
+" commenting macros for ruby
+let @c='I#'
+let @u='IkD'
+
+" indent macro for 2 spaces
+let @t='I   '
