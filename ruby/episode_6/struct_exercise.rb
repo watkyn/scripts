@@ -1,16 +1,11 @@
 class Struct
   @children = []
-  
-  class << self
-    attr_reader :children  
-    def inherited(child)
-      @children << child
-    end
+  def self.inherited(child)
+    @children << child
   end
-  
 end
 
-Dave = Struct.new(:dave)
-Fred = Struct.new(:fred)
+Tony = Struct.new(:name, :address)
+Cow = Struct.new(:name, :speices)
 
-puts Struct.children
+puts Struct.instance_variable_get(:@children)

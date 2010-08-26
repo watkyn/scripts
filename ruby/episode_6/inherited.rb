@@ -5,9 +5,6 @@ class Parent
 end
 
 class Child < Parent
-  def self.inherited(child)
-    puts "inheriting from down the chain"
-  end
 end
 
 class GrandChild < Child  
