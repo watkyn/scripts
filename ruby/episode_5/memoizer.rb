@@ -1,15 +1,14 @@
 module Memoizer
 
-  def memoize(method)
-
-    old_meth = self.instance_method(method)
-
-    define_method :discount_calc do |skus|
+  def memoize(method, &blck)
+    define_method(method, &blck)
+    old_meth = instance_method(method)
+    define_method method do |*args|
       @memory ||= {}
-      if @memory[skus] == nil
-        @memory[skus] = old_meth.bind(self).call(skus)
+      if @memory[args] == nil
+        @memory[args] = old_meth.bind(self).call(*args)
       end
-      @memory[skus]
+      @memory[args]
     end
   end
 
