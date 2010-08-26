@@ -2,7 +2,6 @@
 
 <leader>d nerd-tree
 <leader>t goto file (mvim only)
-<leader>p peep open (mvim only - not sure this is what i want yet)
 
 change from nerd-tree to editor and back again = ctrl w w
 
