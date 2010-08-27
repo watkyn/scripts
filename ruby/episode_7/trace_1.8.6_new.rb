@@ -1,5 +1,11 @@
 module Trace
-  
+
+  #keep track of all the original methods
+  @orig_methods = {}
+  class << self
+    attr_accessor :orig_methods
+  end
+
   def self.included(klass)
     def klass.method_added(name)
       return if @_adding_method_right_now
@@ -10,12 +16,12 @@ module Trace
   end
 
   def self.wrap_method(method_name, klass)
-    orig_method = "_orig_#{method_name}_"
+    Trace.orig_methods[:method_nam] = klass.instance_method(method_name)
     method_body = %{
-      alias_method :#{orig_method}, :#{method_name}
       def #{method_name}(*args, &block)
         puts "==> calling #{method_name} with \#{args.inspect}"
-        result = send(:#{orig_method}, *args, &block)
+        puts Trace.orig_method
+        result = Trace.orig_method.bind(self).call(*args, &block)
         puts "<== result is \#{result}"
         result
       end
