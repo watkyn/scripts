@@ -1,12 +1,16 @@
+class BeforeTraceObject
+  def any_method(*args, &block)
+    puts "any method"
+  end
+end
+
 module Trace
 
-  #keep track of all the original methods
-  @orig_methods = {}
-  class << self
-    attr_accessor :orig_methods
-  end
-
   def self.included(klass)
+    klass.const_set(:HASHY, {})
+    klass.instance_methods(false).each do |method|
+      wrap_method(method, klass)
+    end
     def klass.method_added(name)
       return if @_adding_method_right_now
       @_adding_method_right_now = true
@@ -16,42 +20,52 @@ module Trace
   end
 
   def self.wrap_method(method_name, klass)
-    Trace.orig_methods[:method_nam] = klass.instance_method(method_name)
+    klass.const_get(:HASHY)[method_name.to_sym] = klass.instance_method(method_name)
     method_body = %{
       def #{method_name}(*args, &block)
         puts "==> calling #{method_name} with \#{args.inspect}"
-        puts Trace.orig_method
-        result = Trace.orig_method.bind(self).call(*args, &block)
+        result = HASHY[:#{method_name}].bind(self).call(*args, &block)
         puts "<== result is \#{result}"
         result
       end
     }
-    puts method_body
     klass.class_eval method_body
   end
 
 end
 
-class TraceExample
+class BeforeTraceObject
   include Trace
-
-  def some_method(arg1, arg2)
-    puts "the real some_method"
-    arg1 + arg2
-  end
-  
-  def with_block(arg, &block)
-    puts "the real with_block"
-    block.call * arg
-  end
-
-  def name=(new_name)
-    @name = new_name
-  end
-
 end
 
-ex = TraceExample.new
-ex.some_method(2, 3)
-ex.with_block(4) { 3 }
+b = BeforeTraceObject.new
+b.any_method(1)
 
+#class TraceExample
+  #include Trace
+
+  #def self.classer(arg)
+    #puts arg
+  #end
+
+  #def some_method(arg1, arg2)
+    #puts "the real some_method"
+    #arg1 + arg2
+  #end
+  
+  #def with_block(arg, &block)
+    #puts "the real with_block"
+    #block.call * arg
+  #end
+
+  #def name=(new_name)
+    #@name = new_name
+  #end
+
+#end
+
+#TraceExample.classer("hello there")
+#ex = TraceExample.new
+#ex.some_method(2, 3)
+#ex.with_block(4) { 3 }
+#ex.name = "tony"
