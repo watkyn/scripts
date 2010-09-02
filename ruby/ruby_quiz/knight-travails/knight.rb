@@ -4,6 +4,14 @@ class Knight
   attr_accessor :position
   attr_reader :move_history
 
+  def initialize(start_pos='a1')
+    @position = start_pos
+  end
+
+  def self.all_moves(position, *forbidden)
+    Knight.new(position).available_moves(*forbidden)
+  end
+
   def available_moves(*excludes)
     letter, number = split_position(@position) 
     moves = []

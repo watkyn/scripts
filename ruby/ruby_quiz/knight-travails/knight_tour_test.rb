@@ -42,6 +42,7 @@ class KnightTourTest < Test::Unit::TestCase
   def test_nil_return_values_simple
     assert_nil tour(b1, a3, a3)
     assert_nil tour(b1, d2, d2)
+    assert_nil tour(b1, b1)
   end
 
   def test_a_bunch_of_normal_two_param_calls
