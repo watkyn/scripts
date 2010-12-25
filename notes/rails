@@ -2,7 +2,7 @@ include ActionController::UrlWriter
 default_url_options[:host] = 'whatever'
 
 #debug a rake task
-rdebug  /opt/local/bin/rake db:migrate
+rdebug -I "lib:test" test/functional/line_items_controller_test.rb
 
 3.4 Getting help (‘help’)        How to ask for help (help)
 3.5 Controlling the debugger (‘quit’, ‘restart’, ‘interrupt’, ‘source’)     Controlling the debugger (quit, restart, interrupt)

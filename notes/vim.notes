@@ -25,3 +25,6 @@ ci ' - replaces text between single quote
 ci " - replaces text between double quote
 
 "a - changes to use the copy paste buffer designated by a
+
+indent text over with shift >>
+

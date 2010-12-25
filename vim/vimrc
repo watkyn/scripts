@@ -1,6 +1,6 @@
-set tabstop=4
+set tabstop=2
 set smarttab
-set shiftwidth=4
+set shiftwidth=2
 set autoindent
 set expandtab
 set backspace=start,indent
@@ -9,10 +9,12 @@ set nobackup
 set hlsearch
 set ignorecase
 
+let mapleader = ","
+
 map Q :q!
 map <F1> :bn<CR>
-map <C-A> :w<CR>
-imap <C-A> <ESC>:w<CR>
+map <C-A> :wa<CR>
+imap <C-A> <ESC>:wa<CR>
 
 syntax on
 
@@ -54,5 +56,6 @@ autocmd FileType make set noexpandtab
 autocmd FileType python set noexpandtab
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 autocmd Filetype haml setlocal ts=2 sts=2 sw=2
+autocmd Filetype sass setlocal ts=2 sts=2 sw=2
 
 
