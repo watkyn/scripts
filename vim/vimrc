@@ -10,10 +10,12 @@ set hlsearch
 set ignorecase
 set vb t_vb=
 
+let mapleader = ","
+
 map Q :q!
 map <F1> :bn<CR>
-map <C-A> :w<CR>
-imap <C-A> <ESC>:w<CR>
+map <C-A> :wa<CR>
+imap <C-A> <ESC>:wa<CR>
 
 syntax on
 
@@ -55,6 +57,7 @@ autocmd FileType make set noexpandtab
 autocmd FileType python set noexpandtab
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 autocmd Filetype haml setlocal ts=2 sts=2 sw=2
+autocmd Filetype sass setlocal ts=2 sts=2 sw=2
 autocmd Filetype story setlocal ts=2 sts=2 sw=2
 autocmd Filetype groovy setlocal ts=2 sts=2 sw=2
 
