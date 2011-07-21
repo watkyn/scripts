@@ -1,4 +1,4 @@
-set guifont=Monaco:h18
+set guifont=Monaco:h14
 
 if has('gui_macvim')
   set fuoptions=maxvert,maxhorz " Full-screen mode uses the full screen
