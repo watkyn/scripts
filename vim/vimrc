@@ -3,12 +3,12 @@ set smarttab
 set shiftwidth=2
 set autoindent
 set expandtab
-set backspace=start,indent
 set nocompatible
 set nobackup
 set hlsearch
 set ignorecase
 set vb t_vb=
+set number
 
 let mapleader = ","
 
