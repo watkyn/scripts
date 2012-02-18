@@ -1,12 +1,22 @@
-set tabstop=2
-set smarttab
-set shiftwidth=2
-set autoindent
-set expandtab
-set nocompatible
+set nocompatible                " choose no compatibility with legacy vi
+syntax enable
+set encoding=utf-8
+set showcmd                     " display incomplete commands
+filetype plugin indent on       " load file type plugins + indentation
+
+"" Whitespace
+set nowrap                      " don't wrap lines
+set tabstop=2 shiftwidth=2      " a tab is two spaces (or set this to 4)
+set expandtab                   " use spaces, not tabs (optional)
+set backspace=indent,eol,start  " backspace through everything in insert mode
+
+"" Searching
+set hlsearch                    " highlight matches
+set incsearch                   " incremental searching
+set ignorecase                  " searches are case insensitive...
+set smartcase                   " ... unless they contain at least one capital letter
+
 set nobackup
-set hlsearch
-set ignorecase
 set vb t_vb=
 set number
 
@@ -16,11 +26,9 @@ map Q :q!
 map <F1> :bn<CR>
 map <C-A> :wa<CR>
 imap <C-A> <ESC>:wa<CR>
-
-syntax on
+map <leader>a :wa<CR>
 
 :colorscheme desert 
-:behave xterm
 
 nmap <leader>d :NERDTreeToggle<CR>
 nmap <silent> <F7> :NERDTreeToggle<CR>
@@ -49,9 +57,15 @@ nmap <leader>n :tabnext<CR>
 nmap <leader>b :tabprev<CR>
 nmap <leader>r :!!<CR>
 
+" switch between split windows
+nmap <leader>w <c-w><c-w>
+
+
 " for the command t plugin
+nmap <leader>ft :CommandTFlush<CR>
 set wildignore+=.git,*.class,**/classes/**,**/CVS/**
 let NERDTreeIgnore=['\~$', 'CVS']
+
 
 autocmd FileType make set noexpandtab
 autocmd FileType python set noexpandtab
@@ -62,3 +76,9 @@ autocmd Filetype story setlocal ts=2 sts=2 sw=2
 autocmd Filetype groovy setlocal ts=2 sts=2 sw=2
 
 
+" double percentage sign in command mode is expanded
+" to directory of current file - http://vimcasts.org/e/14
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+
+" switch between last two buffers
+nnoremap <leader><leader> <c-^>

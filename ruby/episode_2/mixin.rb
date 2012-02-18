@@ -1,25 +1,17 @@
 module Configuration
   
   def config
-    puts "configging"
+    puts "instance method"
   end
   
-  def self.config
-    puts "self configging"
-  end
 
   def self.included(cls)
     cls.extend(ClassMethods)
   end
   
-  def self.extended(cls)
-    puts "#{self} and #{cls}"
-    cls.extend(ClassMethods)
-  end
-  
   module ClassMethods
     def class_config
-      puts "classy config"
+      puts "class method"
     end
   end
   
@@ -27,19 +19,18 @@ end
 
 class GeofishrConfiguration
   include Configuration
-end
-
-class OtherConfig
-  extend Configuration
+  
+  def self.cls_config
+    puts "calling class config"
+    class_config
+  end
+  
   
 end
 
 
-gc = GeofishrConfiguration.new
-oc = OtherConfig.new
 
+gc = GeofishrConfiguration.new
 gc.config
-OtherConfig.config
-OtherConfig.class_config
-Configuration.config
-GeofishrConfiguration.class_config
+
+GeofishrConfiguration.cls_config
