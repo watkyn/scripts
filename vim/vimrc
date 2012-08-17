@@ -1,10 +1,9 @@
 set nocompatible                " choose no compatibility with legacy vi
 syntax enable
 set encoding=utf-8
+set fileencoding=utf-8
 set showcmd                     " display incomplete commands
 filetype plugin indent on       " load file type plugins + indentation
-
-:set enc=utf-8
 
 "" Whitespace
 set nowrap                      " don't wrap lines
@@ -21,6 +20,9 @@ set smartcase                   " ... unless they contain at least one capital l
 set nobackup
 set vb t_vb=
 set number
+
+"" let me use the mouse when I want to
+set mouse=a
 
 let mapleader = ","
 
