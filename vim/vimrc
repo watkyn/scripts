@@ -5,6 +5,19 @@ set fileencoding=utf-8
 set showcmd                     " display incomplete commands
 filetype plugin indent on       " load file type plugins + indentation
 
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+"let Vundle manage Vundle
+Bundle 'gmarik/vundle'
+    
+" github Bundles here:
+Bundle 'tpope/vim-fugitive'
+Bundle 'scrooloose/nerdtree'
+Bundle 'FredKSchott/CoVim'
+Bundle 'kien/ctrlp.vim'
+
+
 "" Whitespace
 set nowrap                      " don't wrap lines
 set tabstop=2 shiftwidth=2      " a tab is two spaces (or set this to 4)
@@ -40,9 +53,6 @@ nmap <silent> <F7> :NERDTreeToggle<CR>
 " Make it easy to update/reload .vimrc
 nmap <leader>s :source ~/.vimrc<CR>
 
-" For Haml
-au! BufRead,BufNewFile *.haml setfiletype haml
-
 " bind control-l to hashrocket
 imap <C-l> <Space>=><Space>
 
@@ -66,7 +76,8 @@ nmap <leader>w <c-w><c-w>
 
 
 " for the command t plugin
-nmap <leader>ft :CommandTFlush<CR>
+nmap <leader>t :CtrlP<CR>
+
 set wildignore+=.git,*.class,**/classes/**,**/CVS/**
 let NERDTreeIgnore=['\~$', 'CVS']
 
