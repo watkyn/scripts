@@ -86,3 +86,6 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
 " switch between last two buffers
 nnoremap <leader><leader> <c-^>
+
+" always show hidden files in the nerdy tree
+let NERDTreeShowHidden=1
