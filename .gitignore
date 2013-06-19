@@ -1,3 +1,5 @@
 *.swp
 *.jar
 .netrwhist
+
+vim/bundle/*
