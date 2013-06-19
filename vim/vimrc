@@ -16,6 +16,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/nerdtree'
 Bundle 'FredKSchott/CoVim'
 Bundle 'kien/ctrlp.vim'
+Bundle 'vim-scripts/comments.vim'
 
 
 "" Whitespace
