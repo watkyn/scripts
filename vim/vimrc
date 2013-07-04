@@ -1,10 +1,4 @@
-set nocompatible                " choose no compatibility with legacy vi
-syntax enable
-set encoding=utf-8
-set fileencoding=utf-8
-set showcmd                     " display incomplete commands
-filetype plugin indent on       " load file type plugins + indentation
-
+filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
@@ -12,12 +6,21 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
     
 " github Bundles here:
-Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/nerdtree'
-Bundle 'FredKSchott/CoVim'
+Bundle 'scrooloose/nerdcommenter' 
+"Bundle 'FredKSchott/CoVim'
 Bundle 'kien/ctrlp.vim'
-Bundle 'vim-scripts/comments.vim'
+Bundle 'tpope/vim-ragtag'
+Bundle 'tpope/vim-cucumber'
 
+
+set nocompatible                " choose no compatibility with legacy vi
+filetype plugin indent on       " load file type plugins + indentation
+syntax on
+set showcmd                     " display incomplete commands
+set encoding=utf-8
+set fileencoding=utf-8
+set showmatch                   " show the matching (){} [] etc
 
 "" Whitespace
 set nowrap                      " don't wrap lines
@@ -42,9 +45,9 @@ let mapleader = ","
 
 map Q :q!
 map <F1> :bn<CR>
-map <C-A> :wa<CR>
-imap <C-A> <ESC>:wa<CR>
-map <leader>a :wa<CR>
+map <C-J> :wa<CR>
+imap <C-J> <ESC>:wa<CR>
+map <leader>j :wa<CR>
 
 :colorscheme desert 
 
