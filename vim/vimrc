@@ -94,6 +94,9 @@ autocmd Filetype sass setlocal ts=2 sts=2 sw=2
 autocmd Filetype story setlocal ts=2 sts=2 sw=2
 autocmd Filetype groovy setlocal ts=2 sts=2 sw=2
 
+" copy and paste stuff
+set clipboard=unnamed
+
 
 " double percentage sign in command mode is expanded
 " to directory of current file - http://vimcasts.org/e/14
