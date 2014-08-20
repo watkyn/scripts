@@ -12,6 +12,10 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-ragtag'
 Bundle 'tpope/vim-cucumber'
+Bundle "sudar/vim-arduino-syntax"
+
+"ctrl p settings
+"let g:ctrlp_custom_ignore = 'vendor'
 
 
 set nocompatible                " choose no compatibility with legacy vi
@@ -83,8 +87,8 @@ nmap <leader>w <c-w><c-w>
 " for the command t plugin
 nmap <leader>t :CtrlP<CR>
 
-set wildignore+=.git,*.class,**/classes/**,**/CVS/**
-let NERDTreeIgnore=['\~$', 'CVS']
+set wildignore+=.git,*.class,**/classes/**,**/CVS/**,**/vendor/**
+let NERDTreeIgnore=['\~$', 'CVS', '.git', '.bundle']
 
 
 autocmd FileType make set noexpandtab
