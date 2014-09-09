@@ -8,14 +8,11 @@ Bundle 'gmarik/vundle'
 " github Bundles here:
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter' 
-"Bundle 'FredKSchott/CoVim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-ragtag'
 Bundle 'tpope/vim-cucumber'
 Bundle "sudar/vim-arduino-syntax"
-
-"ctrl p settings
-"let g:ctrlp_custom_ignore = 'vendor'
+Bundle 'vim-ruby/vim-ruby'
 
 
 set nocompatible                " choose no compatibility with legacy vi
@@ -55,10 +52,6 @@ map <leader>j :wa<CR>
 
 :colorscheme desert 
 
-nmap <leader>d :NERDTreeToggle<CR>
-nmap <silent> <F7> :NERDTreeToggle<CR>
-nmap <leader>f :NERDTreeFind<CR>
-
 " Make it easy to update/reload .vimrc
 nmap <leader>s :source ~/.vimrc<CR>
 
@@ -83,13 +76,11 @@ nmap <leader>r :!!<CR>
 " switch between split windows
 nmap <leader>w <c-w><c-w>
 
-
 " for the command t plugin
 nmap <leader>t :CtrlP<CR>
 
 set wildignore+=.git,*.class,**/classes/**,**/CVS/**,**/vendor/**
 let NERDTreeIgnore=['\~$', 'CVS', '.git', '.bundle']
-
 
 autocmd FileType make set noexpandtab
 autocmd FileType python set noexpandtab
@@ -111,4 +102,10 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 nnoremap <leader><leader> <c-^>
 
 " always show hidden files in the nerdy tree
+" NERD related things
 let NERDTreeShowHidden=1
+set wildignore+=.git,*.class,**/classes/**,**/CVS/**
+let NERDTreeIgnore=['\~$', 'CVS', '\.swp$']
+nmap <leader>d :NERDTreeToggle<CR>
+nmap <silent> <F7> :NERDTreeToggle<CR>
+nmap <leader>f :NERDTreeFind<CR>
