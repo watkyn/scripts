@@ -58,16 +58,8 @@ nmap <leader>s :source ~/.vimrc<CR>
 " bind control-l to hashrocket
 imap <C-l> <Space>=><Space>
 
-" open tabs with command-number
-map <D-1> :tabn 1<CR>
-map <D-2> :tabn 2<CR>
-map <D-3> :tabn 3<CR>
-map <D-4> :tabn 4<CR>
-map <D-5> :tabn 5<CR>
-map <D-6> :tabn 6<CR>
-map <D-7> :tabn 7<CR>
-map <D-8> :tabn 8<CR>
-map <D-9> :tabn 9<CR>
+" open buffers to choose from
+map <C-o> :buffers<CR>
 
 nmap <leader>n :tabnext<CR>
 nmap <leader>b :tabprev<CR>
@@ -78,6 +70,10 @@ nmap <leader>w <c-w><c-w>
 
 " for the command t plugin
 nmap <leader>t :CtrlP<CR>
+
+" add .ctrlp to a dir and it will not search up for the base of the repo
+" but will search from the current dir only
+let g:ctrlp_root_markers = ['.ctrlp']
 
 set wildignore+=.git,*.class,**/classes/**,**/CVS/**,**/vendor/**
 let NERDTreeIgnore=['\~$', 'CVS', '.git', '.bundle']
@@ -109,3 +105,19 @@ let NERDTreeIgnore=['\~$', 'CVS', '\.swp$']
 nmap <leader>d :NERDTreeToggle<CR>
 nmap <silent> <F7> :NERDTreeToggle<CR>
 nmap <leader>f :NERDTreeFind<CR>
+
+
+" OS X only but ones I really like to have
+
+
+" open tabs with command-number
+map <D-1> :tabn 1<CR>
+map <D-2> :tabn 2<CR>
+map <D-3> :tabn 3<CR>
+map <D-4> :tabn 4<CR>
+map <D-5> :tabn 5<CR>
+map <D-6> :tabn 6<CR>
+map <D-7> :tabn 7<CR>
+map <D-8> :tabn 8<CR>
+map <D-9> :tabn 9<CR>
+
