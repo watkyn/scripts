@@ -1,21 +1,23 @@
+set nocompatible                " choose no compatibility with legacy vi
 filetype off
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call vundle#begin()
 
 "let Vundle manage Vundle
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
     
 " github Bundles here:
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/nerdcommenter' 
-Bundle 'kien/ctrlp.vim'
-Bundle 'tpope/vim-ragtag'
-Bundle 'tpope/vim-cucumber'
-Bundle "sudar/vim-arduino-syntax"
-Bundle 'vim-ruby/vim-ruby'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter' 
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-ragtag'
+Plugin 'tpope/vim-cucumber'
+Plugin 'sudar/vim-arduino-syntax'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'taglist.vim'
 
+call vundle#end()
 
-set nocompatible                " choose no compatibility with legacy vi
 filetype plugin indent on       " load file type plugins + indentation
 syntax on
 set showcmd                     " display incomplete commands
@@ -106,9 +108,10 @@ nmap <leader>d :NERDTreeToggle<CR>
 nmap <silent> <F7> :NERDTreeToggle<CR>
 nmap <leader>f :NERDTreeFind<CR>
 
+" Cucumber Vim
+nmap <leader>c [<C-d>
 
 " OS X only but ones I really like to have
-
 
 " open tabs with command-number
 map <D-1> :tabn 1<CR>
