@@ -111,7 +111,11 @@ nmap <leader>f :NERDTreeFind<CR>
 " Cucumber Vim
 nmap <leader>c [<C-d>
 
+" taglist mappings
+map <leader>o :TlistToggle<CR>
+
 " OS X only but ones I really like to have
+
 
 " open tabs with command-number
 map <D-1> :tabn 1<CR>
