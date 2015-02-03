@@ -44,6 +44,9 @@ set number
 "" let me use the mouse when I want to
 set mouse=a
 
+"" search for ctags folder
+set tags=./tags,tags;$HOME
+
 let mapleader = ","
 
 map Q :q!
@@ -60,8 +63,8 @@ nmap <leader>s :source ~/.vimrc<CR>
 " bind control-l to hashrocket
 imap <C-l> <Space>=><Space>
 
-" open buffers to choose from
-map <C-o> :buffers<CR>
+" taglist mappings
+map <C-o> :TlistToggle<CR>
 
 nmap <leader>n :tabnext<CR>
 nmap <leader>b :tabprev<CR>
@@ -111,8 +114,6 @@ nmap <leader>f :NERDTreeFind<CR>
 " Cucumber Vim
 nmap <leader>c [<C-d>
 
-" taglist mappings
-map <leader>o :TlistToggle<CR>
 
 " OS X only but ones I really like to have
 
