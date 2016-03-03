@@ -16,6 +16,10 @@ Plugin 'sudar/vim-arduino-syntax'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'taglist.vim'
 
+" Whiteroom style env to help with writing
+Plugin 'mikewest/vimroom'
+Plugin 'junegunn/limelight.vim'
+
 call vundle#end()
 
 filetype plugin indent on       " load file type plugins + indentation
@@ -75,6 +79,7 @@ nmap <leader>w <c-w><c-w>
 
 " for the command t plugin
 nmap <leader>t :CtrlP<CR>
+let g:ctrlp_working_path_mode = 0
 
 " add .ctrlp to a dir and it will not search up for the base of the repo
 " but will search from the current dir only
@@ -114,10 +119,6 @@ nmap <leader>f :NERDTreeFind<CR>
 " Cucumber Vim
 nmap <leader>c [<C-d>
 
-
-" OS X only but ones I really like to have
-
-
 " open tabs with command-number
 map <D-1> :tabn 1<CR>
 map <D-2> :tabn 2<CR>
@@ -128,4 +129,3 @@ map <D-6> :tabn 6<CR>
 map <D-7> :tabn 7<CR>
 map <D-8> :tabn 8<CR>
 map <D-9> :tabn 9<CR>
-
